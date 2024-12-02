@@ -1,0 +1,13 @@
+[package]
+name = "hut"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sdf-viewer = { path = "../sdf-viewer", features = ["sdfffi"], default-features = false }
+clap = { version = "3", features = ["derive"] } # CLI parser. Heavy dependency on this version because of klask.
+cgmath = { version = "0.18" } # Math library (shared with three-d)
+wasm-bindgen = "0.2.95"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
